@@ -1,0 +1,119 @@
+/* Reset e Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: #ebeef1; 
+    color: #1a1a1a; 
+    line-height: 1.6;
+}
+
+/* Container Principal com Grid (Layout de 2 Colunas) */
+.container { 
+    max-width: 1100px; 
+    margin: 20px auto; 
+    display: grid;
+    grid-template-columns: 1fr 320px; /* Matéria larga | Sidebar estreita */
+    gap: 20px;
+    padding: 0 15px;
+}
+
+/* Cabeçalho ocupando as duas colunas */
+header { 
+    grid-column: 1 / -1; 
+    background: #fff;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+}
+
+header h1 { 
+    font-size: 1.5rem; 
+    letter-spacing: -1px; 
+    color: #000;
+}
+
+/* Área da Matéria (Lado Esquerdo) */
+article { 
+    background: #fff; 
+    padding: 30px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.category { 
+    color: #004a99; 
+    font-weight: 700; 
+    font-size: 0.75rem; 
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Título Estilo Jornal (Imagem 3/4) */
+article h2 { 
+    font-family: 'Georgia', serif; 
+    font-size: 2.2rem; 
+    line-height: 1.1; 
+    margin-bottom: 15px;
+    color: #051d3b;
+}
+
+.meta-data { 
+    color: #666; 
+    font-size: 0.85rem; 
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.main-img { 
+    width: 100%; 
+    border-radius: 10px; 
+    margin-bottom: 20px; 
+}
+
+/* Sidebar de Anúncios (Lado Direito) */
+.ads-area { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px; 
+}
+
+.ad-box { 
+    position: sticky; 
+    top: 20px; /* O anúncio segue o scroll */
+}
+
+.ad-box img { 
+    width: 100%; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Vídeo e Botão */
+.video-wrapper { 
+    position: relative; padding-bottom: 56.25%; height: 0; 
+    margin: 25px 0; border-radius: 12px; overflow: hidden; 
+}
+
+.video-wrapper iframe { 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; 
+}
+
+.btn-link { 
+    display: inline-block; background: #0056b3; color: white; 
+    padding: 14px 28px; text-decoration: none; border-radius: 8px; 
+    font-weight: bold; transition: 0.3s; margin-top: 15px;
+}
+
+.btn-link:hover { background: #003d80; }
+
+/* Responsividade para Celular */
+@media (max-width: 850px) {
+    .container { grid-template-columns: 1fr; }
+    .ad-box { position: static; }
+}
